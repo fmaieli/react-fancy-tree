@@ -6,7 +6,6 @@ import 'jquery.fancytree';
 export default class FancyTree extends React.Component {
   constructor(props) {
     super(props);
-    this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount() {
@@ -19,17 +18,20 @@ export default class FancyTree extends React.Component {
   }
 
   init() {
+    let self = this;
     var resultData = this.props.wrapper.mapTiposEnsayos(this.props.data);
     this.$el.fancytree({
       checkbox: true,
       icons: false,
       selectMode: 3,
       source: resultData,
-      beforeSelect: null
+      beforeSelect: null,
+      select: function(event, data) {
+        let itemsSelected = self.selectedElements();
+        self.props.onChange(itemsSelected);
+      }
     });
   }
-
-  onChange() {}
 
   selectedElements() {
     var tree = this.$el.fancytree('getTree').getSelectedNodes();

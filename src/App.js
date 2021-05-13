@@ -6,6 +6,7 @@ import data from '../data/data.js';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.onChangeFancyTree = this.onChangeFancyTree.bind(this);
 
     this.state = {
       fancyTreeItems: [],
@@ -17,6 +18,7 @@ export default class App extends React.Component {
 
   onChangeFancyTree(itemsSelected) {
     this.setState({ fancyTreeItems: itemsSelected });
+    console.log(this.state.fancyTreeItems);
   }
 
   render() {
@@ -28,6 +30,7 @@ export default class App extends React.Component {
           wrapper={this.state.wrapper}
           onChange={this.onChangeFancyTree}
         />
+        <pre>{this.state.fancyTreeItems}</pre>
       </div>
     );
   }
