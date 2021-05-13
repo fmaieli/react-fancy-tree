@@ -8,17 +8,26 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      fancyTreeItems: [],
       wrapper: new FancyTreeWrapper('fancytree')
     };
   }
 
   componentDidMount() {}
 
+  onChangeFancyTree(itemsSelected) {
+    this.setState({ fancyTreeItems: itemsSelected });
+  }
+
   render() {
     return (
       <div>
-        <h1>Fancy Tree</h1>
-        <FancyTree data={data} wrapper={this.state.wrapper} />
+        <h1>FancyTreeComponent</h1>
+        <FancyTree
+          data={data}
+          wrapper={this.state.wrapper}
+          onChange={this.onChangeFancyTree}
+        />
       </div>
     );
   }
