@@ -10,7 +10,7 @@ export default class App extends React.Component {
 
     this.state = {
       fancyTreeItems: [],
-      wrapper: new FancyTreeWrapper('fancytree')
+      wrapper: new FancyTreeWrapper()
     };
   }
 
