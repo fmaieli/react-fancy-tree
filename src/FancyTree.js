@@ -3,7 +3,7 @@ import './style.css';
 var $ = require('jquery');
 import 'jquery.fancytree';
 
-export default class FancyDropdownTree extends React.Component {
+export default class FancyTree extends React.Component {
   componentDidMount() {
     this.$el = $(this.el);
     this.initializeComponent();
