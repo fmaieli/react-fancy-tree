@@ -2,5 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import FancyTree from './FancyTree';
+import FancyTreeWrapper from '../wrapper/fancyTreeWrapper.js';
+import data from '../data/data.js';
 
-ReactDOM.render(<FancyTree />, document.getElementById('root'));
+var fancyWrapper = new FancyTreeWrapper('fancytree');
+
+ReactDOM.render(
+  <FancyTree data={data} wrapper={fancyWrapper} />,
+  document.getElementById('root')
+);
