@@ -1,7 +1,7 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
 
-export default function App() {
+export default function FancyTree() {
   return (
     <div>
       <h1>Hello StackBlitz!</h1>

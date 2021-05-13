@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery.fancytree": "^2.38.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
