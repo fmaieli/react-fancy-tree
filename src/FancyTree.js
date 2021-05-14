@@ -19,7 +19,9 @@ export default class FancyTree extends React.Component {
 
   init() {
     let self = this;
-    var resultData = this.props.mapper.map(this.props.data);
+    let registeredList = [];
+
+    var resultData = this.props.mapper.map(this.props.data, registeredList);
     this.$el.fancytree({
       checkbox: true,
       icons: false,
@@ -28,7 +30,8 @@ export default class FancyTree extends React.Component {
       beforeSelect: null,
       select: function(event, data) {
         let itemsSelected = self.selectedElements();
-        self.props.onChange(itemsSelected);
+        let itemsSelectedFromList = itemsSelected.map(i => registeredList[i]);
+        self.props.onChange(itemsSelectedFromList);
       }
     });
   }

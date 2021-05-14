@@ -30,7 +30,6 @@ export default class App extends React.Component {
           mapper={this.state.mapper}
           onChange={this.onChangeFancyTree}
         />
-        <pre>{this.state.fancyTreeItems}</pre>
       </div>
     );
   }
