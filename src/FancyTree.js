@@ -19,7 +19,7 @@ export default class FancyTree extends React.Component {
 
   init() {
     let self = this;
-    var resultData = this.props.wrapper.mapTiposEnsayos(this.props.data);
+    var resultData = this.props.mapper.map(this.props.data);
     this.$el.fancytree({
       checkbox: true,
       icons: false,

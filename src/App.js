@@ -10,7 +10,7 @@ export default class App extends React.Component {
 
     this.state = {
       fancyTreeItems: [],
-      wrapper: new FancyTreeMapper()
+      mapper: new FancyTreeMapper()
     };
   }
 
@@ -27,7 +27,7 @@ export default class App extends React.Component {
         <h1>FancyTreeComponent</h1>
         <FancyTree
           data={data}
-          wrapper={this.state.wrapper}
+          mapper={this.state.mapper}
           onChange={this.onChangeFancyTree}
         />
         <pre>{this.state.fancyTreeItems}</pre>
