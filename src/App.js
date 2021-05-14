@@ -1,6 +1,6 @@
 import React from 'react';
 import FancyTree from './FancyTree';
-import FancyTreeWrapper from '../wrapper/fancyTreeWrapper.js';
+import FancyTreeMapper from '../mapper/fancyTreeMapper.js';
 import data from '../data/data.js';
 
 export default class App extends React.Component {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
 
     this.state = {
       fancyTreeItems: [],
-      wrapper: new FancyTreeWrapper()
+      wrapper: new FancyTreeMapper()
     };
   }
 
