@@ -1,19 +1,19 @@
 var $ = require('jquery');
 
-export default class FancyTreeWrapper {
-  mapTiposEnsayos(data) {
+export default class FancyTreeMapper {
+  map(data) {
     var self = this;
     var arrayResult = [];
 
     $.each(data, function(key, elem) {
-      var newOption = self.mapTipoEnsayoToOption(elem);
+      var newOption = self.mapToOption(elem);
       arrayResult.push(newOption);
     });
 
     return arrayResult;
   }
 
-  mapTipoEnsayoToOption(element) {
+  mapToOption(element) {
     var self = this;
     var combinaciones = element.Combinaciones;
     var combinations = null;
@@ -21,7 +21,7 @@ export default class FancyTreeWrapper {
     if (combinaciones.length > 0) {
       combinations = [];
       combinaciones.forEach(comb => {
-        var newCombinationOption = self.mapTipoEnsayoToOption(comb);
+        var newCombinationOption = self.mapToOption(comb);
         combinations.push(newCombinationOption);
       });
     }
